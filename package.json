@@ -30,6 +30,7 @@
   "homepage":
     "https://github.com/coco-platform/webpack-plugin-inject-external#README",
   "devDependencies": {
+    "bootstrap": "^4.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.11.0",
@@ -48,6 +49,7 @@
     "lodash": "^4.17.10",
     "node-yaml": "^3.1.1",
     "posthtml": "^0.11.3",
-    "posthtml-inject": "^0.5.0"
+    "posthtml-inject": "^0.5.0",
+    "superagent": "^3.8.3"
   }
 }

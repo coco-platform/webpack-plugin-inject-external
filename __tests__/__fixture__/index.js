@@ -3,4 +3,14 @@
  * @author - huang.jian <hjj491229492@hotmail.com>
  */
 
-/* eslint-env browser */
+/* eslint-disable */
+import _ from 'lodash';
+import $ from 'jquery';
+
+$('document').ready(() => {
+  const text = document.querySelector('.text');
+
+  _.range(1, 9).forEach((value) => {
+    text.textContent = `Current Counter: ${value}`;
+  });
+});

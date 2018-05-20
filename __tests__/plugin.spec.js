@@ -7,10 +7,11 @@ const path = require('path');
 // External
 const webpack = require('webpack');
 const MemoryFS = require('memory-fs');
+const _ = require('lodash');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Internal
-const Plugin = require('../lib');
+const InjectExternalPlugin = require('../lib');
 
 // Scope
 const mfs = Reflect.construct(MemoryFS, []);
@@ -24,27 +25,53 @@ const configuration = {
     filename: '[name].js',
     publicPath: '/',
   },
-  module: {
-    rules: [],
+  externals: {
+    lodash: '_',
+    jquery: 'jQuery',
   },
   plugins: [
-    Reflect.construct(HtmlWebpackPlugin, [
-      {
-        template: path.resolve(__dirname, '__fixture__', 'index.html'),
-        inject: 'body',
-      },
-    ]),
-    Reflect.construct(Plugin, [
-      {
-        verbose: true,
-      },
-    ]),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '__fixture__', 'index.html'),
+      inject: 'body',
+    }),
   ],
 };
 
 describe('plugin test suits', () => {
+  it('should pick up external modules', (done) => {
+    const callback = (modules) => {
+      try {
+        expect(modules).toMatchSnapshot();
+      } catch (err) {
+        done(err);
+      }
+    };
+    const dedicatedConfiguration = _.assign({}, configuration, {
+      plugins: [
+        ...configuration.plugins,
+        new InjectExternalPlugin({ handleExternalModules: callback }),
+      ],
+    });
+    const compiler = webpack(dedicatedConfiguration);
+
+    compiler.inputFileSystem = fs;
+    compiler.outputFileSystem = mfs;
+
+    compiler.run((err) => {
+      try {
+        expect(err).toBeNull();
+        done();
+      } catch (error) {
+        done(error);
+      }
+    });
+  });
+
   it('should complete standard workflow', (done) => {
-    const compiler = webpack(configuration);
+    const dedicatedConfiguration = _.assign({}, configuration, {
+      plugins: [...configuration.plugins, new InjectExternalPlugin()],
+    });
+    const compiler = webpack(dedicatedConfiguration);
     const outputPath = `${configuration.output.path}/index.html`;
 
     compiler.inputFileSystem = fs;
