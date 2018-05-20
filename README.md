@@ -9,16 +9,22 @@
 
 ```shell
 # npm
-npm install webpack-plugin-inject-external --only=dev;
+npm install @coco-platform/webpack-plugin-inject-external --only=dev;
 # yarn
-yarn add webpack-plugin-inject-external --dev;
+yarn add @coco-platform/webpack-plugin-inject-external --dev;
 ```
 
 ## Options
 
-### options.verbose
-
-Optional, default false. whether output hints resource into stdout.
+```javascript
+/**
+ * @typedef {object} Options
+ *
+ * @property {string} env - development, production
+ * @property {number} timeout - throw error after timeout
+ * @property {string} definition - A url with YAML file which describe external resources
+ */
+```
 
 ## Example
 
@@ -45,11 +51,7 @@ const configuration = {
         inject: 'body',
       },
     ]),
-    Reflect.construct(PlaceholderPlugin, [
-      {
-        verbose: true,
-      },
-    ]),
+    Reflect.construct(InjectExternalPlugin, []),
   ],
 };
 ```
@@ -63,7 +65,9 @@ Finally output:
   <title>Webpack Plugin</title>``
 </head>
 <body>
-  <script type="text/javascript" src="/main.js"></script></body>
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/lodash.js/4.17.10/lodash.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/main.js"></script>
 </html>
 ```
 
