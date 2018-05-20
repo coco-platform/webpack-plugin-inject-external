@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tools suits should create standard HTML AST 1`] = `
+Object {
+  "body": Array [
+    Object {
+      "attributes": Object {
+        "crossorigin": "anonymous",
+        "src": "https://cdn.bootcss.com/lodash.js/4.17.10/lodash.js",
+        "type": "text/javascript",
+      },
+      "closeTag": true,
+      "tagName": "script",
+    },
+    Object {
+      "attributes": Object {
+        "crossorigin": "anonymous",
+        "src": "https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.js",
+        "type": "text/javascript",
+      },
+      "closeTag": true,
+      "tagName": "script",
+    },
+  ],
+  "head": Array [
+    Object {
+      "attributes": Object {
+        "href": "https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css",
+        "rel": "stylesheet",
+        "type": "text/css",
+      },
+      "closeTag": true,
+      "tagName": "link",
+    },
+  ],
+}
+`;
+
+exports[`tools suits should parse standard externals definition 1`] = `
+Object {
+  "babel-polyfill": Array [
+    "https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.js",
+  ],
+  "bootstrap": Array [
+    "https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.js",
+    "https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css",
+  ],
+  "echarts": Array [
+    "https://cdn.bootcss.com/echarts/4.1.0/echarts.js",
+  ],
+  "jquery": Array [
+    "https://cdn.bootcss.com/jquery/3.3.1/jquery.js",
+  ],
+  "lodash": Array [
+    "https://cdn.bootcss.com/lodash.js/4.17.10/lodash.js",
+  ],
+  "moment": Array [
+    "https://cdn.bootcss.com/moment.js/2.22.1/moment.js",
+    "https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js",
+  ],
+  "react": Array [
+    "https://cdn.bootcss.com/react/16.3.2/umd/react.development.js",
+  ],
+  "react-dom": Array [
+    "https://cdn.bootcss.com/react-dom/16.3.2/umd/react-dom.development.js",
+  ],
+  "web-animations-js": Array [
+    "https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js",
+  ],
+}
+`;
+
+exports[`tools suits should parse standard externals definition 2`] = `
+Object {
+  "babel-polyfill": Array [
+    "https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.min.js",
+  ],
+  "bootstrap": Array [
+    "https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js",
+    "https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css",
+  ],
+  "echarts": Array [
+    "https://cdn.bootcss.com/echarts/4.1.0/echarts.min.js",
+  ],
+  "jquery": Array [
+    "https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js",
+  ],
+  "lodash": Array [
+    "https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js",
+  ],
+  "moment": Array [
+    "https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js",
+    "https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js",
+  ],
+  "react": Array [
+    "https://cdn.bootcss.com/react/16.3.2/umd/react.production.min.js",
+  ],
+  "react-dom": Array [
+    "https://cdn.bootcss.com/react-dom/16.3.2/umd/react-dom.production.min.js",
+  ],
+  "web-animations-js": Array [
+    "https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js",
+  ],
+}
+`;
