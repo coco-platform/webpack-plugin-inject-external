@@ -1,6 +1,6 @@
 # eslint configuration
 parserOptions:
-  ecmaVersion: 6
+  ecmaVersion: 2017
   sourceType: module
   ecmaFeatures:
     # support redux shallow copy
@@ -40,3 +40,4 @@ rules:
   react/sort-comp: off
   function-paren-newline: off
   object-curly-newline: off
+  no-confusing-arrow: off
