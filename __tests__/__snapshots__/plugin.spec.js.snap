@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`plugin test suits should complete standard workflow 1`] = `
+"<!DOCTYPE html>
+<html lang=\\"en\\">
+<head>
+  <meta charset=\\"UTF-8\\">
+  <title>Webpack Plugin</title>
+</head>
+<body>
+<script type=\\"text/javascript\\" src=\\"/main.js\\"></script></body>
+</html>"
+`;
