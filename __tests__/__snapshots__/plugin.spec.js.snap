@@ -11,3 +11,10 @@ exports[`plugin test suits should complete standard workflow 1`] = `
 <script type=\\"text/javascript\\" src=\\"/main.js\\"></script></body>
 </html>"
 `;
+
+exports[`plugin test suits should pick up external modules 1`] = `
+Array [
+  "jquery",
+  "lodash",
+]
+`;
