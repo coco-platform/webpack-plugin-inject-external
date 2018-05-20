@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "precommit": "pretty-quick --staged",
+    "prepush": "npm test",
     "test": "jest --config jest.config.js --coverage",
     "test:watch": "jest --config jest.config.js --watch"
   },
