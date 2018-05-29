@@ -21,8 +21,7 @@ yarn add @coco-platform/webpack-plugin-inject-external --dev;
  * @typedef {object} Options
  *
  * @property {string} env - development, production
- * @property {number} timeout - throw error after timeout
- * @property {string} definition - A url with YAML file which describe external resources
+ * @property {string} definition - YAML file content which describe external resources
  */
 ```
 
