@@ -38,38 +38,21 @@ const configuration = {
 };
 
 describe('plugin test suits', () => {
-  it('should pick up external modules', (done) => {
-    const callback = (modules) => {
-      try {
-        expect(modules).toMatchSnapshot();
-      } catch (err) {
-        done(err);
-      }
-    };
+  it('should complete standard workflow', (done) => {
+    const target = path.resolve(
+      __dirname,
+      '__fixture__',
+      'bootcdn.externals.yml'
+    );
+    const contents = fs.readFileSync(target, { encoding: 'utf8' });
     const dedicatedConfiguration = _.assign({}, configuration, {
       plugins: [
         ...configuration.plugins,
-        new InjectExternalPlugin({ handleExternalModules: callback }),
+        new InjectExternalPlugin({
+          env: 'development',
+          definition: contents,
+        }),
       ],
-    });
-    const compiler = webpack(dedicatedConfiguration);
-
-    compiler.inputFileSystem = fs;
-    compiler.outputFileSystem = mfs;
-
-    compiler.run((err) => {
-      try {
-        expect(err).toBeNull();
-        done();
-      } catch (error) {
-        done(error);
-      }
-    });
-  });
-
-  it('should complete standard workflow', (done) => {
-    const dedicatedConfiguration = _.assign({}, configuration, {
-      plugins: [...configuration.plugins, new InjectExternalPlugin()],
     });
     const compiler = webpack(dedicatedConfiguration);
     const outputPath = `${configuration.output.path}/index.html`;
