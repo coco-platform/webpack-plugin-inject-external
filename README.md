@@ -20,37 +20,27 @@ yarn add @coco-platform/webpack-plugin-inject-external --dev;
 /**
  * @typedef {object} Options
  *
- * @property {string} env - development, production
- * @property {string} definition - YAML file content which describe external resources
+ * @property {string} env - development, production or other environment alias
+ * @property {string} definition - YAML file path, whose contents describe external resources
  */
 ```
 
-## Example
+## Usage
 
 Then config the webpack:
 
 ```javascript
 const configuration = {
   entry: path.resolve(__dirname, '__fixture__', 'index.js'),
-  resolve: {
-    extensions: ['.js', '.css'],
-  },
-  output: {
-    path: path.resolve(process.cwd(), 'dist'),
-    filename: '[name].js',
-    publicPath: '/',
-  },
-  module: {
-    rules: [],
-  },
   plugins: [
-    Reflect.construct(HtmlWebpackPlugin, [
-      {
-        template: path.resolve(__dirname, '__fixture__', 'index.html'),
-        inject: 'body',
-      },
-    ]),
-    Reflect.construct(InjectExternalPlugin, []),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '__fixture__', 'index.html'),
+      inject: 'body',
+    }),
+    new InjectExternalPlugin({
+      env: 'development',
+      definition: 'bootcdn.externals.yml,
+    }),
   ],
 };
 ```
