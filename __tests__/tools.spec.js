@@ -2,8 +2,10 @@
  * @description - tools unit tests
  * @author - huang.jian <hjj491229492@hotmail.com>
  */
-const fs = require('fs');
+
+// packages
 const path = require('path');
+// internal
 const tools = require('../lib/tools');
 
 describe('tools suits', () => {
@@ -13,21 +15,14 @@ describe('tools suits', () => {
       '__fixture__',
       'bootcdn.externals.yml'
     );
-    const source = fs.readFileSync(target, { encoding: 'utf8' });
 
-    expect(tools.parseExternalDefinition(source)).toMatchSnapshot();
-  });
+    expect(
+      tools.parseExternalDefinition(target, 'development')
+    ).toMatchSnapshot();
 
-  it('should parse standard externals definition', () => {
-    const target = path.resolve(
-      __dirname,
-      '__fixture__',
-      'bootcdn.externals.yml'
-    );
-    const source = fs.readFileSync(target, { encoding: 'utf8' });
-    const result = tools.parseExternalDefinition(source, 'production');
-
-    expect(result).toMatchSnapshot();
+    expect(
+      tools.parseExternalDefinition(target, 'production')
+    ).toMatchSnapshot();
   });
 
   it('should create standard HTML AST', () => {
