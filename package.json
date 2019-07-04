@@ -9,7 +9,9 @@
   "scripts": {
     "pretest": "yarn add webpack --peer",
     "test": "jest --config jest.config.js --coverage",
-    "test:watch": "jest --config jest.config.js --watch"
+    "test:watch": "jest --config jest.config.js --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "files": [
     "lib"
@@ -52,7 +54,8 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "lodash": "^4.17.10",
-    "node-yaml": "^4.0.0"
+    "node-yaml": "^4.0.0",
+    "snyk": "^1.189.0"
   },
   "peerDependencies": {
     "webpack": "^4.32.0"
@@ -62,5 +65,6 @@
       "pre-commit": "pretty-quick --staged",
       "pre-push": "npm test"
     }
-  }
+  },
+  "snyk": true
 }
