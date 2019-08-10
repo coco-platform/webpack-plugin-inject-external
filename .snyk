@@ -16,3 +16,23 @@ patch:
         patched: '2019-07-04T06:12:51.433Z'
     - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
         patched: '2019-07-04T06:12:51.433Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > eslint-plugin-import > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/types > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/types > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/generator > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/helper-function-name > @babel/types > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
+    - node-yaml > promise-fs > @octetstream/eslint-config > babel-eslint > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2019-08-10T07:34:23.489Z'
