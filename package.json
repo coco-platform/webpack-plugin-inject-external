@@ -11,7 +11,7 @@
     "test": "jest --config jest.config.js --coverage",
     "test:watch": "jest --config jest.config.js --watch",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublishOnly": "npm run snyk-protect"
   },
   "files": [
     "lib"
@@ -37,6 +37,8 @@
   },
   "homepage": "https://github.com/coco-platform/webpack-plugin-inject-external#README",
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/jest": "^24.0.13",
     "@types/node": "^12.11.7",
     "@types/webpack": "^4.4.31",
@@ -50,22 +52,22 @@
     "jquery": "^3.3.1",
     "memory-fs": "^0.4.1",
     "prettier": "^1.12.1",
-    "pretty-quick": "^2.0.0"
+    "pretty-quick": "^2.0.0",
+    "snyk": "^1.230.5"
   },
   "dependencies": {
     "chalk": "^2.4.1",
     "is-what": "^3.3.1",
-    "js-yaml": "^3.13.1",
-    "node-yaml": "^4.0.0",
-    "snyk": "^1.230.5"
+    "node-yaml": "^4.0.0"
   },
   "peerDependencies": {
-    "webpack": "^4.39.2"
+    "webpack": "^4.41.2"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",
-      "pre-push": "npm test"
+      "pre-push": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "snyk": true
