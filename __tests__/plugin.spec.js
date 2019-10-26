@@ -28,8 +28,7 @@ describe('plugin test suits', () => {
         publicPath: '/',
       },
       externals: {
-        lodash: '_',
-        jquery: 'jQuery',
+        moment: 'moment',
       },
       plugins: [
         new HtmlWebpackPlugin({
@@ -37,7 +36,7 @@ describe('plugin test suits', () => {
           inject: 'body',
         }),
         new InjectExternalPlugin({
-          env: 'development',
+          env: 'production',
           definition: target,
         }),
       ],

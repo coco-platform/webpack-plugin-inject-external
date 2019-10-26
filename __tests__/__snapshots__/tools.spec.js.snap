@@ -6,7 +6,7 @@ Object {
     Object {
       "attributes": Object {
         "crossorigin": "anonymous",
-        "src": "https://cdn.bootcss.com/lodash.js/4.17.10/lodash.js",
+        "src": "https://lib.baomitu.com/react-dom/16.10.1/umd/react.development.js",
         "type": "text/javascript",
       },
       "closeTag": true,
@@ -15,91 +15,63 @@ Object {
     Object {
       "attributes": Object {
         "crossorigin": "anonymous",
-        "src": "https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.js",
+        "integrity": "sha384-fYxN7HsDOBRo1wT/NSZ0LkoNlcXvpDpFy6WzB42LxuKAX7sBwgo7vuins+E1HCaw",
+        "src": "https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js",
         "type": "text/javascript",
       },
       "closeTag": true,
       "tagName": "script",
     },
   ],
-  "head": Array [
-    Object {
-      "attributes": Object {
-        "href": "https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css",
-        "rel": "stylesheet",
-        "type": "text/css",
-      },
-      "closeTag": true,
-      "tagName": "link",
-    },
-  ],
+  "head": Array [],
 }
 `;
 
 exports[`tools suits should parse standard externals definition 1`] = `
 Object {
-  "babel-polyfill": Array [
-    "https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.js",
-  ],
-  "bootstrap": Array [
-    "https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.js",
-    "https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css",
-  ],
-  "echarts": Array [
-    "https://cdn.bootcss.com/echarts/4.1.0/echarts.js",
-  ],
-  "jquery": Array [
-    "https://cdn.bootcss.com/jquery/3.3.1/jquery.js",
-  ],
-  "lodash": Array [
-    "https://cdn.bootcss.com/lodash.js/4.17.10/lodash.js",
-  ],
   "moment": Array [
-    "https://cdn.bootcss.com/moment.js/2.22.1/moment.js",
-    "https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js",
+    Object {
+      "url": "https://cdn.bootcss.com/moment.js/2.22.1/moment.js",
+    },
+    Object {
+      "url": "https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js",
+    },
   ],
   "react": Array [
-    "https://cdn.bootcss.com/react/16.3.2/umd/react.development.js",
-  ],
-  "react-dom": Array [
-    "https://cdn.bootcss.com/react-dom/16.3.2/umd/react-dom.development.js",
+    Object {
+      "url": "https://lib.baomitu.com/react-dom/16.10.1/umd/react-dom.development.js",
+    },
   ],
   "web-animations-js": Array [
-    "https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js",
+    Object {
+      "url": "https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js",
+    },
   ],
 }
 `;
 
 exports[`tools suits should parse standard externals definition 2`] = `
 Object {
-  "babel-polyfill": Array [
-    "https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.min.js",
-  ],
-  "bootstrap": Array [
-    "https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js",
-    "https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css",
-  ],
-  "echarts": Array [
-    "https://cdn.bootcss.com/echarts/4.1.0/echarts.min.js",
-  ],
-  "jquery": Array [
-    "https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js",
-  ],
-  "lodash": Array [
-    "https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js",
-  ],
   "moment": Array [
-    "https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js",
-    "https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js",
+    Object {
+      "integrity": "sha384-fYxN7HsDOBRo1wT/NSZ0LkoNlcXvpDpFy6WzB42LxuKAX7sBwgo7vuins+E1HCaw",
+      "url": "https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js",
+    },
+    Object {
+      "integrity": "sha384-XjUTsP+pYBX4Kwg40gPvhWcRGKZh9gUpDForgg5bwsnyNU+VabKhRX6XkyM6fLk4",
+      "url": "https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js",
+    },
   ],
   "react": Array [
-    "https://cdn.bootcss.com/react/16.3.2/umd/react.production.min.js",
-  ],
-  "react-dom": Array [
-    "https://cdn.bootcss.com/react-dom/16.3.2/umd/react-dom.production.min.js",
+    Object {
+      "integrity": "sha384-s+4sCJEFimwQu2safB6vclCnbG1xrLnO3YaCIFfqQah5bdnJm9w2su1pT0TQltwW",
+      "url": "https://cdn.bootcss.com/react/16.3.2/umd/react.production.min.js",
+    },
   ],
   "web-animations-js": Array [
-    "https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js",
+    Object {
+      "url": "https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js",
+    },
   ],
 }
 `;

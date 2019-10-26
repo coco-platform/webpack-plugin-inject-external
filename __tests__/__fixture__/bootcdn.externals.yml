@@ -1,47 +1,23 @@
-# use bootcdn.cn as external resources host
+# use cdn.baomitu.com as external resources host
 library:
   - name: 'web-animations-js'
     linkage: 'https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js'
 environment:
   development:
-    - name: 'babel-polyfill'
-      linkage: 'https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.js'
     - name: 'react'
-      linkage: 'https://cdn.bootcss.com/react/16.3.2/umd/react.development.js'
-    - name: 'react-dom'
-      linkage: 'https://cdn.bootcss.com/react-dom/16.3.2/umd/react-dom.development.js'
-    - name: 'jquery'
-      linkage: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.js'
-    - name: 'lodash'
-      linkage: 'https://cdn.bootcss.com/lodash.js/4.17.10/lodash.js'
-    - name: 'echarts'
-      linkage: 'https://cdn.bootcss.com/echarts/4.1.0/echarts.js'
-    - name: 'bootstrap'
-      linkage:
-        - 'https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.js'
-        - 'https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css'
+      linkage: 'https://lib.baomitu.com/react-dom/16.10.1/umd/react-dom.development.js'
     - name: 'moment'
       linkage:
         - 'https://cdn.bootcss.com/moment.js/2.22.1/moment.js'
         - 'https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js'
   production:
-    - name: 'babel-polyfill'
-      linkage: 'https://cdn.bootcss.com/babel-polyfill/6.26.0/polyfill.min.js'
     - name: 'react'
-      linkage: 'https://cdn.bootcss.com/react/16.3.2/umd/react.production.min.js'
-    - name: 'react-dom'
-      linkage: 'https://cdn.bootcss.com/react-dom/16.3.2/umd/react-dom.production.min.js'
-    - name: 'jquery'
-      linkage: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js'
-    - name: 'lodash'
-      linkage: 'https://cdn.bootcss.com/lodash.js/4.17.10/lodash.min.js'
-    - name: 'echarts'
-      linkage: 'https://cdn.bootcss.com/echarts/4.1.0/echarts.min.js'
-    - name: 'bootstrap'
       linkage:
-        - 'https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js'
-        - 'https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css'
+        url: 'https://cdn.bootcss.com/react/16.3.2/umd/react.production.min.js'
+        integrity: 'sha384-s+4sCJEFimwQu2safB6vclCnbG1xrLnO3YaCIFfqQah5bdnJm9w2su1pT0TQltwW'
     - name: 'moment'
       linkage:
-        - 'https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js'
-        - 'https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js'
+        - url: 'https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js'
+          integrity: 'sha384-fYxN7HsDOBRo1wT/NSZ0LkoNlcXvpDpFy6WzB42LxuKAX7sBwgo7vuins+E1HCaw'
+        - url: 'https://cdn.bootcss.com/moment.js/2.22.1/locale/zh-cn.js'
+          integrity: 'sha384-XjUTsP+pYBX4Kwg40gPvhWcRGKZh9gUpDForgg5bwsnyNU+VabKhRX6XkyM6fLk4'

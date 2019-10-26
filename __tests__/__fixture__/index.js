@@ -4,13 +4,6 @@
  */
 
 /* eslint-disable */
-import _ from 'lodash';
-import $ from 'jquery';
+import moment from 'moment';
 
-$('document').ready(() => {
-  const text = document.querySelector('.text');
-
-  _.range(1, 9).forEach((value) => {
-    text.textContent = `Current Counter: ${value}`;
-  });
-});
+document.body.innerText = moment().format();

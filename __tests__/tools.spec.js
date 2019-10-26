@@ -26,12 +26,20 @@ describe('tools suits', () => {
   });
 
   it('should create standard HTML AST', () => {
-    const modules = ['lodash', 'bootstrap'];
+    const modules = ['react', 'moment'];
     const dictionary = {
-      lodash: ['https://cdn.bootcss.com/lodash.js/4.17.10/lodash.js'],
-      bootstrap: [
-        'https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.js',
-        'https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css',
+      react: [
+        {
+          url:
+            'https://lib.baomitu.com/react-dom/16.10.1/umd/react.development.js',
+        },
+      ],
+      moment: [
+        {
+          url: 'https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js',
+          integrity:
+            'sha384-fYxN7HsDOBRo1wT/NSZ0LkoNlcXvpDpFy6WzB42LxuKAX7sBwgo7vuins+E1HCaw',
+        },
       ],
     };
     const result = tools.createTree(modules, dictionary);
