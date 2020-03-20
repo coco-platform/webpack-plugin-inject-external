@@ -53,7 +53,7 @@
     "memory-fs": "^0.4.1",
     "prettier": "^1.12.1",
     "pretty-quick": "^2.0.0",
-    "snyk": "^1.247.1"
+    "snyk": "^1.301.0"
   },
   "dependencies": {
     "chalk": "^3.0.0",
