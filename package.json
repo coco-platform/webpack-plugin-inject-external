@@ -44,7 +44,7 @@
     "@types/webpack": "^4.4.31",
     "eslint": "^6.0.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.1.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.11.0",
     "html-webpack-plugin": "^4.0.2",
     "husky": "^4.0.2",
