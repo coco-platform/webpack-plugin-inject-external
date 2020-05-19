@@ -40,7 +40,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@types/jest": "^25.1.0",
-    "@types/node": "^13.1.0",
+    "@types/node": "^14.0.3",
     "@types/webpack": "^4.4.31",
     "eslint": "^6.0.0",
     "eslint-config-airbnb-base": "^14.0.0",
