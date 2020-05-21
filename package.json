@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/coco-platform/webpack-plugin-inject-external#README",
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
+    "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.2.0",
     "@types/jest": "^25.1.0",
     "@types/node": "^13.1.0",
