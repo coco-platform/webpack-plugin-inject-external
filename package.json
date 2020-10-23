@@ -7,11 +7,11 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "pretest": "yarn add webpack --peer",
     "test": "jest --config jest.config.js --coverage",
     "test:watch": "jest --config jest.config.js --watch",
-    "snyk-protect": "snyk protect",
-    "prepublishOnly": "npm run snyk-protect"
+    "compile": "babel src --source-maps --out-dir lib --extensions '.js,.ts'",
+    "compile:watch": "babel src --source-maps --out-dir lib --extensions '.js,.ts' --watch",
+    "prepublishOnly": "yarn compile"
   },
   "files": [
     "lib"
@@ -37,31 +37,42 @@
   },
   "homepage": "https://github.com/coco-platform/webpack-plugin-inject-external#README",
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@types/jest": "^25.1.0",
-    "@types/node": "^14.0.1",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.2",
     "@types/webpack": "^4.4.31",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.6.0",
     "eslint": "^6.0.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-import": "^2.11.0",
-    "html-webpack-plugin": "^4.0.2",
     "husky": "^4.0.2",
     "jest": "^24.8.0",
-    "jquery": "^3.3.1",
-    "memory-fs": "^0.4.1",
-    "prettier": "^2.0.0",
+    "memory-fs": "^0.5.0",
+    "prettier": "^2.1.2",
     "pretty-quick": "^2.0.0",
-    "snyk": "^1.247.1"
+    "snyk": "^1.247.1",
+    "typescript": "^4.0.3",
+    "webpack": "^5.2.0"
   },
   "dependencies": {
     "chalk": "^4.0.0",
+    "html-webpack-plugin": "^4.5.0",
     "is-what": "^3.3.1",
-    "node-yaml": "^4.0.0"
+    "webpack": "^5.2.0",
+    "yaml": "^1.10.0"
   },
   "peerDependencies": {
-    "webpack": "^4.41.2"
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^5.2.0"
   },
   "husky": {
     "hooks": {

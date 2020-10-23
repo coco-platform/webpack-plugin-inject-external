@@ -1,15 +1,29 @@
-# eslint configuration
+parser: '@typescript-eslint/parser'
 parserOptions:
-  ecmaVersion: 2018
+  ecmaVersion: 12
   sourceType: module
+  project: './tsconfig.json'
 env:
   node: true
-  jest: true
+  es2020: true
+plugins:
+  - '@typescript-eslint'
 extends:
   - 'eslint:recommended'
-  - 'airbnb-base'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'airbnb-typescript/base'
   - 'prettier'
+  - 'prettier/@typescript-eslint'
 rules:
+  indent:
+    - error
+    - 2
   linebreak-style:
     - error
     - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
