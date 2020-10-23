@@ -4,9 +4,9 @@
  */
 
 // packages
-const path = require('path');
+import path from 'path';
 // internal
-const tools = require('../lib/tools');
+import { parseExternalDefinition, createTree } from '../src/tools';
 
 describe('tools suits', () => {
   it('should parse standard externals definition', () => {
@@ -16,17 +16,17 @@ describe('tools suits', () => {
       'bootcdn.externals.yml'
     );
 
-    expect(
-      tools.parseExternalDefinition(target, 'development')
-    ).toMatchSnapshot();
-
-    expect(
-      tools.parseExternalDefinition(target, 'production')
-    ).toMatchSnapshot();
+    expect(parseExternalDefinition(target, 'development')).toMatchSnapshot();
+    expect(parseExternalDefinition(target, 'production')).toMatchSnapshot();
   });
 
   it('should create standard HTML AST', () => {
     const modules = ['react', 'moment'];
+    const compilations = {
+      wanings: {
+        push: jest.fn(),
+      },
+    };
     const dictionary = {
       react: [
         {
@@ -42,8 +42,10 @@ describe('tools suits', () => {
         },
       ],
     };
-    const result = tools.createTree(modules, dictionary);
+    /* @ts-ignore */
+    const result = createTree(modules, dictionary, compilations);
 
     expect(result).toMatchSnapshot();
+    expect(compilations.wanings.push).not.toHaveBeenCalled();
   });
 });

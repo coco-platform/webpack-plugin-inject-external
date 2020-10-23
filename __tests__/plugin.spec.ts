@@ -1,17 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies, no-console */
 
 // package
-const fs = require('fs');
-const path = require('path');
-const webpack = require('webpack');
-const MemoryFS = require('memory-fs');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import fs from 'fs';
+import path from 'path';
+import webpack from 'webpack';
+import MemoryFS from 'memory-fs';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 // Internal
-const InjectExternalPlugin = require('../lib');
+import InjectExternalPlugin from '../';
 
 // Scope
-const mfs = Reflect.construct(MemoryFS, []);
+const mfs = new MemoryFS();
 
 describe('plugin test suits', () => {
   it('should complete standard workflow', (done) => {
@@ -47,9 +47,10 @@ describe('plugin test suits', () => {
     compiler.inputFileSystem = fs;
     compiler.outputFileSystem = mfs;
 
-    compiler.run((err) => {
+    compiler.run((err, stat) => {
       try {
         expect(err).toBeNull();
+        expect(stat.hasErrors()).toBeFalsy();
         expect(mfs.readFileSync(outputPath, 'utf8')).toMatchSnapshot();
         done();
       } catch (error) {

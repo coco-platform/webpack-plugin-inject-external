@@ -2,15 +2,16 @@
 
 exports[`tools suits should create standard HTML AST 1`] = `
 Object {
-  "body": Array [
+  "bodyTags": Array [
     Object {
       "attributes": Object {
         "crossorigin": "anonymous",
         "src": "https://lib.baomitu.com/react-dom/16.10.1/umd/react.development.js",
         "type": "text/javascript",
       },
-      "closeTag": true,
+      "innerHTML": undefined,
       "tagName": "script",
+      "voidTag": false,
     },
     Object {
       "attributes": Object {
@@ -19,11 +20,12 @@ Object {
         "src": "https://cdn.bootcss.com/moment.js/2.22.1/moment.min.js",
         "type": "text/javascript",
       },
-      "closeTag": true,
+      "innerHTML": undefined,
       "tagName": "script",
+      "voidTag": false,
     },
   ],
-  "head": Array [],
+  "headTags": Array [],
 }
 `;
 
