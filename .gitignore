@@ -41,5 +41,5 @@ jspm_packages
 .idea
 
 # Production
-/dist
-/lib
+dist
+lib
