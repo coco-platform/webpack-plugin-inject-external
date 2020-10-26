@@ -7,6 +7,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
+    "pretest": "yarn add webpack html-webpack-plugin --peer",
     "test": "jest --config jest.config.js --coverage",
     "test:watch": "jest --config jest.config.js --watch",
     "compile": "babel src --source-maps --out-dir lib --extensions '.js,.ts'",
@@ -63,9 +64,7 @@
   },
   "dependencies": {
     "chalk": "^4.0.0",
-    "html-webpack-plugin": "^4.5.0",
     "is-what": "^3.3.1",
-    "webpack": "^5.2.0",
     "yaml": "^1.10.0"
   },
   "peerDependencies": {
