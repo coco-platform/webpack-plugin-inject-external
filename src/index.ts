@@ -39,7 +39,7 @@ class InjectExternalPlugin {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  apply(compiler: Compiler) {
+  apply(compiler: Compiler): void {
     compiler.hooks.compilation.tap('InjectExternal', (compilation) => {
       const [HtmlWebpackPluginInstance] = compiler.options.plugins.filter(
         (plugin) => plugin.constructor.name === 'HtmlWebpackPlugin'
