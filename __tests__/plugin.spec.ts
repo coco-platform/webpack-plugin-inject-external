@@ -8,7 +8,7 @@ import MemoryFS from 'memory-fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 // Internal
-import InjectExternalPlugin from '../';
+import InjectExternalPlugin from '../src';
 
 // Scope
 const mfs = new MemoryFS();
