@@ -8,7 +8,7 @@ import MemoryFS from 'memory-fs';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 // Internal
-import InjectExternalPlugin from '../src';
+import { InjectExternalPlugin } from '../src';
 
 // Scope
 const mfs = new MemoryFS();
@@ -17,8 +17,7 @@ describe('plugin test suits', () => {
   it('should complete standard workflow', (done) => {
     const target = path.resolve(
       __dirname,
-      '__fixture__',
-      'bootcdn.externals.yml'
+      './__fixture__/bootcdn.externals.yml'
     );
     const configuration = {
       entry: path.resolve(__dirname, '__fixture__', 'index.js'),
@@ -41,7 +40,9 @@ describe('plugin test suits', () => {
         }),
       ],
     };
-    const compiler = webpack(configuration);
+    const compiler = webpack(
+      (configuration as unknown) as webpack.Configuration
+    );
     const outputPath = `${configuration.output.path}/index.html`;
 
     compiler.inputFileSystem = fs;

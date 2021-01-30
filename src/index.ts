@@ -5,6 +5,7 @@
 
 // packages
 import assert from 'assert';
+import util from 'util';
 import { Compiler } from 'webpack';
 import { getHooks } from 'html-webpack-plugin';
 
@@ -26,7 +27,7 @@ const defaultOptions = {
   definition: '',
 };
 
-class InjectExternalPlugin {
+export class InjectExternalPlugin {
   private options: InjectExternalOptions;
 
   constructor(options: InjectExternalOptions) {
@@ -90,4 +91,9 @@ class InjectExternalPlugin {
   }
 }
 
-export default InjectExternalPlugin;
+Reflect.defineProperty(exports, 'default', {
+  get: util.deprecate(
+    () => InjectExternalPlugin,
+    'webpack-plugin-inject-external: default export seems uglify within project'
+  ),
+});

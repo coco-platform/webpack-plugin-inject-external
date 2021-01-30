@@ -68,8 +68,8 @@
     "yaml": "^1.10.0"
   },
   "peerDependencies": {
-    "html-webpack-plugin": "^4.5.0",
-    "webpack": "^5.2.0"
+    "html-webpack-plugin": "^4.5.1",
+    "webpack": "^5.19.0"
   },
   "husky": {
     "hooks": {
